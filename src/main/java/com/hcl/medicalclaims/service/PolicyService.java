@@ -19,7 +19,7 @@ import com.hcl.medicalclaims.util.MedicalUtils;
  *
  */
 @Service
-public class PolicyService implements PolicyServiceimpl {
+public class PolicyService implements PolicyServiceImpl {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(PolicyService.class);
 	
@@ -40,6 +40,7 @@ public class PolicyService implements PolicyServiceimpl {
 		
 		if(!policyDetail.isPresent())
 		{
+			LOGGER.info("policy Number does not exists");
 			throw new PolicyNotExistsException(MedicalUtils.POLICY_DETAILS_NOT_EXISTS);
 		}
 		

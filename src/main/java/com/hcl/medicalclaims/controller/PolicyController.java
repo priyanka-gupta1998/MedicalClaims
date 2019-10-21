@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hcl.medicalclaims.dto.PolicyResponseDetailsDto;
 import com.hcl.medicalclaims.exception.PolicyNotExistsException;
-import com.hcl.medicalclaims.service.PolicyServiceimpl;
+import com.hcl.medicalclaims.service.PolicyServiceImpl;
 
 /**
  * The controller for policy details to view
@@ -30,7 +30,7 @@ public class PolicyController {
 	
 	
 	@Autowired
-	PolicyServiceimpl policyService;
+	PolicyServiceImpl policyService;
 	/**
 	 * The policy details will be sending the policy details of the policy Number
 	 * @param policyNo

@@ -6,7 +6,7 @@ import com.hcl.medicalclaims.dto.PolicyResponseDetailsDto;
 import com.hcl.medicalclaims.exception.PolicyNotExistsException;
 
 @Service
-public interface PolicyServiceimpl {
+public interface PolicyServiceImpl {
 
 	public PolicyResponseDetailsDto getPolicyDetails(String policyNo) throws PolicyNotExistsException;
 	

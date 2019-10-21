@@ -36,9 +36,20 @@ public class ClaimDetails {
 	private String approver_first_id_remarks;
 	private Integer approver_second_level_id;
 	private String approver_second_id_remarks;
+	private String natureOfAilment;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "policyId", referencedColumnName = "policyId")
 	private PolicyDetails policyDetails;
+	
+	
+
+	public String getNatureOfAilment() {
+		return natureOfAilment;
+	}
+
+	public void setNatureOfAilment(String natureOfAilment) {
+		this.natureOfAilment = natureOfAilment;
+	}
 
 	/**
 	 * @return the claimId
