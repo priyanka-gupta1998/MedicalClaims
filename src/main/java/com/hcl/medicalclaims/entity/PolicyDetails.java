@@ -21,6 +21,15 @@ public class PolicyDetails {
 	private String policyHolderName;
 	private String policyType;
 	private Double eligibleAmount;
+	private Double claimedAmount;
+
+	public Double getClaimedAmount() {
+		return claimedAmount;
+	}
+
+	public void setClaimedAmount(Double claimedAmount) {
+		this.claimedAmount = claimedAmount;
+	}
 
 	/**
 	 * @return the policyId
