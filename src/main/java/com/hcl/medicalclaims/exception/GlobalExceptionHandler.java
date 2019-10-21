@@ -33,5 +33,11 @@ public class GlobalExceptionHandler {
 		 * errorResponse.setStatusCode(HttpStatus.NOT_FOUND.value()); return new
 		 * ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND); }
 		 */
+	
+	@ExceptionHandler(PolicyNotExistsException.class)
+	public ResponseEntity<ResponseError> policyNotExists(Exception e) {
+		ResponseError error = new ResponseError(e.getMessage(), HttpStatus.NOT_FOUND.value());
+		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+	}
 
 }

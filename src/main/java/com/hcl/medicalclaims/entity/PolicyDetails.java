@@ -26,6 +26,7 @@ public class PolicyDetails {
 	/**
 	 * @return the claimedAmount
 	 */
+
 	public Double getClaimedAmount() {
 		return claimedAmount;
 	}
@@ -33,6 +34,7 @@ public class PolicyDetails {
 	/**
 	 * @param claimedAmount the claimedAmount to set
 	 */
+
 	public void setClaimedAmount(Double claimedAmount) {
 		this.claimedAmount = claimedAmount;
 	}

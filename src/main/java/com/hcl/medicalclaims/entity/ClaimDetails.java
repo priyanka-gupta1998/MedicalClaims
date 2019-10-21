@@ -31,17 +31,64 @@ public class ClaimDetails {
 	private String dischargeSummary;
 	private LocalDate claimDate;
 	private String claimStatus;
-	private String claimUploadFilePath;;
-	private String approverRemarks;
+	private String claimUploadFilePath;
+	private Integer approver_first_level_id;
+	private String approver_first_id_remarks;
+	private Integer approver_second_level_id;
+	private String approver_second_id_remarks;
+	private String natureOfAilment;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "policyId", referencedColumnName = "policyId")
 	private PolicyDetails policyDetails;
+	
+	
+
+	public String getNatureOfAilment() {
+		return natureOfAilment;
+	}
+
+	public void setNatureOfAilment(String natureOfAilment) {
+		this.natureOfAilment = natureOfAilment;
+	}
 
 	/**
 	 * @return the claimId
 	 */
+	
 	public Integer getClaimId() {
 		return claimId;
+	}
+
+	public Integer getApprover_first_level_id() {
+		return approver_first_level_id;
+	}
+
+	public void setApprover_first_level_id(Integer approver_first_level_id) {
+		this.approver_first_level_id = approver_first_level_id;
+	}
+
+	public String getApprover_first_id_remarks() {
+		return approver_first_id_remarks;
+	}
+
+	public void setApprover_first_id_remarks(String approver_first_id_remarks) {
+		this.approver_first_id_remarks = approver_first_id_remarks;
+	}
+
+	public Integer getApprover_second_level_id() {
+		return approver_second_level_id;
+	}
+
+	public void setApprover_second_level_id(Integer approver_second_level_id) {
+		this.approver_second_level_id = approver_second_level_id;
+	}
+
+	public String getApprover_second_id_remarks() {
+		return approver_second_id_remarks;
+	}
+
+	public void setApprover_second_id_remarks(String approver_second_id_remarks) {
+		this.approver_second_id_remarks = approver_second_id_remarks;
 	}
 
 	/**
@@ -189,20 +236,6 @@ public class ClaimDetails {
 	 */
 	public void setClaimUploadFilePath(String claimUploadFilePath) {
 		this.claimUploadFilePath = claimUploadFilePath;
-	}
-
-	/**
-	 * @return the approverRemarks
-	 */
-	public String getApproverRemarks() {
-		return approverRemarks;
-	}
-
-	/**
-	 * @param approverRemarks the approverRemarks to set
-	 */
-	public void setApproverRemarks(String approverRemarks) {
-		this.approverRemarks = approverRemarks;
 	}
 
 	/**
