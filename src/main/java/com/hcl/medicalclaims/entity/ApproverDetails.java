@@ -18,9 +18,37 @@ public class ApproverDetails {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer approverId;
 	private String approverName;
-	private String approverMailId;
-	private String approverPassword;
+	private String mailId;
+	private String password;
 	private String approverRole;
+	
+	/**
+	 * @return the mailId
+	 */
+	public String getMailId() {
+		return mailId;
+	}
+
+	/**
+	 * @param mailId the mailId to set
+	 */
+	public void setMailId(String mailId) {
+		this.mailId = mailId;
+	}
+
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	/**
 	 * @return the approverId
@@ -48,34 +76,6 @@ public class ApproverDetails {
 	 */
 	public void setApproverName(String approverName) {
 		this.approverName = approverName;
-	}
-
-	/**
-	 * @return the approverMailId
-	 */
-	public String getApproverMailId() {
-		return approverMailId;
-	}
-
-	/**
-	 * @param approverMailId the approverMailId to set
-	 */
-	public void setApproverMailId(String approverMailId) {
-		this.approverMailId = approverMailId;
-	}
-
-	/**
-	 * @return the approverPassword
-	 */
-	public String getApproverPassword() {
-		return approverPassword;
-	}
-
-	/**
-	 * @param approverPassword the approverPassword to set
-	 */
-	public void setApproverPassword(String approverPassword) {
-		this.approverPassword = approverPassword;
 	}
 
 	/**
