@@ -19,9 +19,21 @@ public class ClaimDto {
 	private String claimStatus;
 	private String claimUploadFilePath;;
 	private String approverRemarks;
+	private Integer policyId;
 	
 	
-	
+	/**
+	 * @return the policyId
+	 */
+	public Integer getPolicyId() {
+		return policyId;
+	}
+	/**
+	 * @param policyId the policyId to set
+	 */
+	public void setPolicyId(Integer policyId) {
+		this.policyId = policyId;
+	}
 	public Integer getClaimId() {
 		return claimId;
 	}

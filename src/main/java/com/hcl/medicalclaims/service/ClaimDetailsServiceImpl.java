@@ -61,7 +61,7 @@ public class ClaimDetailsServiceImpl implements ClaimsDetailsService {
 				 claimDetails.stream().forEach(claim -> {
 					claimDto = new ClaimDto();
 					BeanUtils.copyProperties(claim, claimDto);
-					//claimDto.setPolicyId(policy.getPolicyId());
+					claimDto.setPolicyId(claimDetailsOptional.get().get(0).getPolicyDetails().getPolicyId());
 					claimDetailss.add(claimDto);
 				 });
 	 	}else if (approverDetails.getApproverRole().equalsIgnoreCase("SENIOR MANAGER")) {
@@ -75,7 +75,7 @@ public class ClaimDetailsServiceImpl implements ClaimsDetailsService {
 			 claimDetails.stream().forEach(claim -> {
 				claimDto = new ClaimDto();
 				BeanUtils.copyProperties(claim, claimDto);
-				//claimDto.setPolicyId(policy.getPolicyId());
+				claimDto.setPolicyId(claimDetailsOptional.get().get(0).getPolicyDetails().getPolicyId());
 				claimDetailss.add(claimDto);
 			 });
 		}
