@@ -1,7 +1,6 @@
 package com.hcl.medicalclaims.repository;
 
 import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,4 +11,5 @@ public interface PolicyRepository extends JpaRepository<PolicyDetails, Integer> 
 
 	
 	public Optional<PolicyDetails> findBypolicyNo(String policyNo);
+
 }
