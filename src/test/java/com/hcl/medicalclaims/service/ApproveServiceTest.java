@@ -12,6 +12,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import com.hcl.medicalclaims.dto.ApproveRequestDto;
 import com.hcl.medicalclaims.entity.ApproverDetails;
+import com.hcl.medicalclaims.entity.ApproverSummary;
 import com.hcl.medicalclaims.entity.ClaimDetails;
 import com.hcl.medicalclaims.entity.PolicyDetails;
 import com.hcl.medicalclaims.repository.ApproveSummaryRepository;
@@ -46,6 +47,7 @@ public class ApproveServiceTest {
 	ApproverDetails approverDetails = null;
 	ClaimDetails claimDetails = null;
 	PolicyDetails policyDetails = null;
+	ApproverSummary approveSummary = null;
 	
 	@Before
 	public void setUp()
@@ -83,6 +85,11 @@ public class ApproveServiceTest {
 		claimDetails.setHospitalName("APPOLLO");
 		claimDetails.setNatureOfAilment("HEART");
 		claimDetails.setPolicyDetails(policyDetails);
+		
+		approveSummary = new ApproverSummary();
+		approveSummary.setApproverId(1);
+		approveSummary.setApproverRole("MANAGER");
+		approveSummary.setApproverSummaryId(1);
 	}
 	
 	/**
@@ -95,6 +102,7 @@ public class ApproveServiceTest {
 		Mockito.when(approverRepository.findByapproverId(approverDetails.getApproverId())).thenReturn(Optional.of(approverDetails));
 		Mockito.when(claimRepository.findByclaimId(claimDetails.getClaimId())).thenReturn(Optional.of(claimDetails));
 		Mockito.when(policyRepository.findById(policyDetails.getPolicyId())).thenReturn(Optional.of(policyDetails));
+		Mockito.when(approveSummaryRepo.save(approveSummary)).thenReturn(approveSummary);
 	}
 	
 }
