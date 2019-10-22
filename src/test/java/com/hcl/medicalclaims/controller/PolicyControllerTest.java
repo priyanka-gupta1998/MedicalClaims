@@ -7,9 +7,8 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.http.HttpStatus;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.hcl.medicalclaims.dto.PolicyResponseDetailsDto;
 import com.hcl.medicalclaims.exception.PolicyNotExistsException;
@@ -21,8 +20,8 @@ import com.hcl.medicalclaims.util.MedicalUtils;
  * @author Sharath G S
  *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-public class TestPolicyController {
+@RunWith(MockitoJUnitRunner.class)
+public class PolicyControllerTest {
 
 	@Mock
 	PolicyServiceImpl policyService;
@@ -52,7 +51,7 @@ public class TestPolicyController {
 	 * @throws PolicyNotExistsException
 	 */
 	@Test
-	public void testpolicyController() throws PolicyNotExistsException
+	public void policyControllerTest() throws PolicyNotExistsException
 	{
 		Mockito.when(policyService.getPolicyDetails("QWE1234")).thenReturn(policyResponse);
 		ResponseEntity<PolicyResponseDetailsDto> policyResponseDetails = policyController.getPolicyDetails("QWE1234");

@@ -1,7 +1,9 @@
+package com.hcl.medicalclaims.entity;
+
+
 /**
  * 
  */
-package com.hcl.medicalclaims.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -21,9 +23,17 @@ public class ApproverSummary {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer approverSummaryId;
 	private String approverRole;
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "approverId", referencedColumnName = "approverId")
-	private ApproverDetails approverDetails;
+	private Integer approverId;
+
+	
+	
+	public Integer getApproverId() {
+		return approverId;
+	}
+
+	public void setApproverId(Integer approverId) {
+		this.approverId = approverId;
+	}
 
 	/**
 	 * @return the approverSummaryId
@@ -52,19 +62,4 @@ public class ApproverSummary {
 	public void setApproverRole(String approverRole) {
 		this.approverRole = approverRole;
 	}
-
-	/**
-	 * @return the approverDetails
-	 */
-	public ApproverDetails getApproverDetails() {
-		return approverDetails;
-	}
-
-	/**
-	 * @param approverDetails the approverDetails to set
-	 */
-	public void setApproverDetails(ApproverDetails approverDetails) {
-		this.approverDetails = approverDetails;
-	}
-
 }
