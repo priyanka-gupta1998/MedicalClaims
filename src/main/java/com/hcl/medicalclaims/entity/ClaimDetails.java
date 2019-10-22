@@ -38,6 +38,17 @@ public class ClaimDetails {
 	@JoinColumn(name = "policyId", referencedColumnName = "policyId")
 	private PolicyDetails policyDetails;
 	private Integer approverSummaryId;
+	private String approverRemarks;
+
+	
+	
+	public String getClaimNo() {
+		return claimNo;
+	}
+
+	public void setClaimNo(String claimNo) {
+		this.claimNo = claimNo;
+	}
 
 	public Integer getApproverSummaryId() {
 		return approverSummaryId;
@@ -47,10 +58,29 @@ public class ClaimDetails {
 		this.approverSummaryId = approverSummaryId;
 	}
 
+
+	
+	/**
+	 * @return the approverRemarks
+	 */
+	public String getApproverRemarks() {
+		return approverRemarks;
+	}
+	/**
+	 * @param approverRemarks the approverRemarks to set
+	 */
+	public void setApproverRemarks(String approverRemarks) {
+		this.approverRemarks = approverRemarks;
+	}
+	/**
+	 * @return the natureOfAilment
+	 */
 	public String getNatureOfAilment() {
 		return natureOfAilment;
 	}
-
+	/**
+	 * @param natureOfAilment the natureOfAilment to set
+	 */
 	public void setNatureOfAilment(String natureOfAilment) {
 		this.natureOfAilment = natureOfAilment;
 	}
@@ -68,20 +98,6 @@ public class ClaimDetails {
 	 */
 	public void setClaimId(Integer claimId) {
 		this.claimId = claimId;
-	}
-
-	/**
-	 * @return the claimNo
-	 */
-	public String getClaimNo() {
-		return claimNo;
-	}
-
-	/**
-	 * @param claimNo the claimNo to set
-	 */
-	public void setClaimNo(String claimNo) {
-		this.claimNo = claimNo;
 	}
 
 	/**

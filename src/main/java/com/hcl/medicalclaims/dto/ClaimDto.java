@@ -1,146 +1,102 @@
 package com.hcl.medicalclaims.dto;
 
 import java.time.LocalDate;
-
 /**
- * @author srinivas
+ * @author priyanka
  *
  */
-public class AddClaimRequestDTO {
-	private Integer policyNo;
+public class ClaimDto {
+
+	private Integer claimId;
+	private String claimNo;
 	private Double claimAmount;
 	private LocalDate admittedDate;
 	private LocalDate dischargeDate;
 	private String hospitalName;
 	private String diagnosis;
 	private String dischargeSummary;
-	private String claimUploadFilePath;
-	private String natureOfAilment;
-
-	/**
-	 * @return the policyNo
-	 */
-	public Integer getPolicyNo() {
-		return policyNo;
+	private LocalDate claimDate;
+	private String claimStatus;
+	private String claimUploadFilePath;;
+	private String approverRemarks;
+	private Integer policyId;
+	
+	public Integer getClaimId() {
+		return claimId;
 	}
-
-	/**
-	 * @param policyNo the policyNo to set
-	 */
-	public void setPolicyNo(Integer policyNo) {
-		this.policyNo = policyNo;
+	public void setClaimId(Integer claimId) {
+		this.claimId = claimId;
 	}
-
-	/**
-	 * @return the claimAmount
-	 */
+	public String getClaimNo() {
+		return claimNo;
+	}
+	public void setClaimNo(String claimNo) {
+		this.claimNo = claimNo;
+	}
 	public Double getClaimAmount() {
 		return claimAmount;
 	}
-
-	/**
-	 * @param claimAmount the claimAmount to set
-	 */
 	public void setClaimAmount(Double claimAmount) {
 		this.claimAmount = claimAmount;
 	}
-
-	/**
-	 * @return the admittedDate
-	 */
 	public LocalDate getAdmittedDate() {
 		return admittedDate;
 	}
-
-	/**
-	 * @param admittedDate the admittedDate to set
-	 */
 	public void setAdmittedDate(LocalDate admittedDate) {
 		this.admittedDate = admittedDate;
 	}
-
-	/**
-	 * @return the dischargeDate
-	 */
 	public LocalDate getDischargeDate() {
 		return dischargeDate;
 	}
-
-	/**
-	 * @param dischargeDate the dischargeDate to set
-	 */
 	public void setDischargeDate(LocalDate dischargeDate) {
 		this.dischargeDate = dischargeDate;
 	}
-
-	/**
-	 * @return the hospitalName
-	 */
 	public String getHospitalName() {
 		return hospitalName;
 	}
-
-	/**
-	 * @param hospitalName the hospitalName to set
-	 */
 	public void setHospitalName(String hospitalName) {
 		this.hospitalName = hospitalName;
 	}
-
-	/**
-	 * @return the diagnosis
-	 */
 	public String getDiagnosis() {
 		return diagnosis;
 	}
-
-	/**
-	 * @param diagnosis the diagnosis to set
-	 */
 	public void setDiagnosis(String diagnosis) {
 		this.diagnosis = diagnosis;
 	}
-
-	/**
-	 * @return the dischargeSummary
-	 */
 	public String getDischargeSummary() {
 		return dischargeSummary;
 	}
-
-	/**
-	 * @param dischargeSummary the dischargeSummary to set
-	 */
 	public void setDischargeSummary(String dischargeSummary) {
 		this.dischargeSummary = dischargeSummary;
 	}
-
-	/**
-	 * @return the claimUploadFilePath
-	 */
+	public LocalDate getClaimDate() {
+		return claimDate;
+	}
+	public void setClaimDate(LocalDate claimDate) {
+		this.claimDate = claimDate;
+	}
+	public String getClaimStatus() {
+		return claimStatus;
+	}
+	public void setClaimStatus(String claimStatus) {
+		this.claimStatus = claimStatus;
+	}
 	public String getClaimUploadFilePath() {
 		return claimUploadFilePath;
 	}
-
-	/**
-	 * @param claimUploadFilePath the claimUploadFilePath to set
-	 */
 	public void setClaimUploadFilePath(String claimUploadFilePath) {
 		this.claimUploadFilePath = claimUploadFilePath;
 	}
-
-	/**
-	 * @return the natureOfAilment
-	 */
-	public String getNatureOfAilment() {
-		return natureOfAilment;
+	public String getApproverRemarks() {
+		return approverRemarks;
 	}
-
-	/**
-	 * @param natureOfAilment the natureOfAilment to set
-	 */
-	public void setNatureOfAilment(String natureOfAilment) {
-		this.natureOfAilment = natureOfAilment;
+	public void setApproverRemarks(String approverRemarks) {
+		this.approverRemarks = approverRemarks;
 	}
-
+	public Integer getPolicyId() {
+		return policyId;
+	}
+	public void setPolicyId(Integer policyId) {
+		this.policyId = policyId;
+	}
 }

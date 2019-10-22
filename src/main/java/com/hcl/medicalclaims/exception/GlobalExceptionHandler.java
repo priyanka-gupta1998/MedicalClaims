@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
- * @author srinivas Used to throw global exceptions
+ * @author srinivas 
+ * Used to throw global exceptions
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -25,19 +26,39 @@ public class GlobalExceptionHandler {
 	 * @param exception
 	 * @param request
 	 * @return ResponseEntity
-	 *//*
-		 * @ExceptionHandler(UserExistException.class) public
-		 * ResponseEntity<ResponseError> globalExceptionHandler(UserExistException
-		 * exception, WebRequest request) { ResponseError errorResponse = new
-		 * ResponseError(); errorResponse.setMessage(exception.getMessage());
-		 * errorResponse.setStatusCode(HttpStatus.NOT_FOUND.value()); return new
-		 * ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND); }
-		 */
-	
-	@ExceptionHandler(PolicyNotExistsException.class)
-	public ResponseEntity<ResponseError> policyNotExists(Exception e) {
-		ResponseError error = new ResponseError(e.getMessage(), HttpStatus.NOT_FOUND.value());
-		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+	 */
+	@ExceptionHandler(FileUploadfailedException.class)
+	public ResponseEntity<ResponseError> fileUploadfailedException(FileUploadfailedException exception) {
+		ResponseError errorResponse = new ResponseError();
+		errorResponse.setMessage(exception.getMessage());
+		errorResponse.setStatusCode(HttpStatus.UNPROCESSABLE_ENTITY.value());
+		return new ResponseEntity<>(errorResponse, HttpStatus.UNPROCESSABLE_ENTITY);
+	}
+
+	/**
+	 * @param exception
+	 * @param request
+	 * @return ResponseEntity
+	 */
+	@ExceptionHandler(HospitalNotFoundException.class)
+	public ResponseEntity<ResponseError> hospitalNotFoundException(HospitalNotFoundException exception) {
+		ResponseError errorResponse = new ResponseError();
+		errorResponse.setMessage(exception.getMessage());
+		errorResponse.setStatusCode(HttpStatus.NOT_FOUND.value());
+		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+	}
+
+	/**
+	 * @param exception
+	 * @param request
+	 * @return ResponseEntity
+	 */
+	@ExceptionHandler(PolicyNotFoundException.class)
+	public ResponseEntity<ResponseError> policyNotFoundException(PolicyNotFoundException exception) {
+		ResponseError errorResponse = new ResponseError();
+		errorResponse.setMessage(exception.getMessage());
+		errorResponse.setStatusCode(HttpStatus.NOT_FOUND.value());
+		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
 	}
 	
 	@ExceptionHandler(ApproverNotExistsException.class)

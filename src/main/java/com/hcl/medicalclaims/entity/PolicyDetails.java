@@ -17,7 +17,7 @@ public class PolicyDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer policyId;
-	private String policyNo;
+	private Integer policyNo;
 	private String policyHolderName;
 	private String policyType;
 	private Double eligibleAmount;
