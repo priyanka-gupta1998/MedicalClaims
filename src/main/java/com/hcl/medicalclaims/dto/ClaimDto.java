@@ -19,7 +19,8 @@ public class ClaimDto {
 	private String claimStatus;
 	private String claimUploadFilePath;;
 	private String approverRemarks;
-	private Integer policyId;
+	
+	
 	
 	public Integer getClaimId() {
 		return claimId;
@@ -93,10 +94,5 @@ public class ClaimDto {
 	public void setApproverRemarks(String approverRemarks) {
 		this.approverRemarks = approverRemarks;
 	}
-	public Integer getPolicyId() {
-		return policyId;
-	}
-	public void setPolicyId(Integer policyId) {
-		this.policyId = policyId;
-	}
+	
 }
