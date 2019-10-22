@@ -21,7 +21,6 @@ public class ApproverDetails {
 	private String mailId;
 	private String password;
 	private String approverRole;
-	
 	/**
 	 * @return the mailId
 	 */

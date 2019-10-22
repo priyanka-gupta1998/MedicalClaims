@@ -36,7 +36,9 @@ public class ClaimDetails {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "policyId", referencedColumnName = "policyId")
 	private PolicyDetails policyDetails;
-
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "approverId", referencedColumnName = "approverId")
+	private ApproverDetails approverDetails;
 	/**
 	 * @return the claimId
 	 */
@@ -49,6 +51,15 @@ public class ClaimDetails {
 	 */
 	public void setClaimId(Integer claimId) {
 		this.claimId = claimId;
+	}
+
+	
+	public ApproverDetails getApproverDetails() {
+		return approverDetails;
+	}
+
+	public void setApproverDetails(ApproverDetails approverDetails) {
+		this.approverDetails = approverDetails;
 	}
 
 	/**

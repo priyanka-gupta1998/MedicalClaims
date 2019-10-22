@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class ClaimDto {
 
 	private Integer claimId;
-	private String claimNo;
+	private Integer claimNo;
 	private Double claimAmount;
 	private LocalDate admittedDate;
 	private LocalDate dischargeDate;
@@ -19,7 +19,7 @@ public class ClaimDto {
 	private String claimStatus;
 	private String claimUploadFilePath;;
 	private String approverRemarks;
-	private Integer policyId;
+	
 	
 	public Integer getClaimId() {
 		return claimId;
@@ -27,10 +27,10 @@ public class ClaimDto {
 	public void setClaimId(Integer claimId) {
 		this.claimId = claimId;
 	}
-	public String getClaimNo() {
+	public Integer getClaimNo() {
 		return claimNo;
 	}
-	public void setClaimNo(String claimNo) {
+	public void setClaimNo(Integer claimNo) {
 		this.claimNo = claimNo;
 	}
 	public Double getClaimAmount() {
@@ -93,10 +93,5 @@ public class ClaimDto {
 	public void setApproverRemarks(String approverRemarks) {
 		this.approverRemarks = approverRemarks;
 	}
-	public Integer getPolicyId() {
-		return policyId;
-	}
-	public void setPolicyId(Integer policyId) {
-		this.policyId = policyId;
-	}
+	
 }

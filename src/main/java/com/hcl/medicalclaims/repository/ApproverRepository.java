@@ -1,6 +1,7 @@
 package com.hcl.medicalclaims.repository;
 
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,5 +15,8 @@ import com.hcl.medicalclaims.entity.ApproverDetails;
 public interface ApproverRepository extends JpaRepository<ApproverDetails, Integer> {
 
 	Optional<ApproverDetails> findByMailIdAndPassword(String mailId, String password);
+
+	List<ApproverDetails> findByApproverId(Integer approverId);
+	
 
 }
