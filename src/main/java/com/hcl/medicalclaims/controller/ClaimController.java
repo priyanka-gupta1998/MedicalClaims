@@ -3,6 +3,8 @@
  */
 package com.hcl.medicalclaims.controller;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +33,7 @@ public class ClaimController {
 	private ClaimService claimService;
 
 	@PostMapping("/claims")
-	public AddClaimResponseDTO addClaim(@RequestBody AddClaimRequestDTO addClaimRequest)
+	public AddClaimResponseDTO addClaim(@Valid @RequestBody AddClaimRequestDTO addClaimRequest)
 			throws PolicyNotFoundException, HospitalNotFoundException {
 		LOGGER.info("In addClaim method of ClaimController class-----");
 		ClaimDetails addClaim = claimService.addClaim(addClaimRequest);
