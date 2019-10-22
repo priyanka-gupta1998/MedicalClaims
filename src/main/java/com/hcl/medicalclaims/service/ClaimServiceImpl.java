@@ -46,7 +46,6 @@ public class ClaimServiceImpl implements ClaimService {
 		LOGGER.info("In addClaim() method of ClaimServiceImpl class----");
 		ClaimDetails claimDetails = new ClaimDetails();
 		BeanUtils.copyProperties(addClaimRequest, claimDetails);
-		LOGGER.info("policy no in dto:" + addClaimRequest.getPolicyNo());
 		Optional<PolicyDetails> optionalPolicyDetails = policyDetailsRepository
 				.findByPolicyNo(addClaimRequest.getPolicyNo());
 		if (!optionalPolicyDetails.isPresent()) {
