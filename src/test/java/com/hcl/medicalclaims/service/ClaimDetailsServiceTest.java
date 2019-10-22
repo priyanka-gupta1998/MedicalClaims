@@ -48,7 +48,7 @@ public class ClaimDetailsServiceTest {
 		claimDetailss = new ArrayList<>();
 		polictDetails=new PolicyDetails();
 		polictDetails.setPolicyId(1);
-		polictDetails.setPolicyNo("1234");
+		polictDetails.setPolicyNo(1234);
 		polictDetails.setPolicyType("Dental");
 		polictDetails.setPolicyHolderName("Priyanka");
 		polictDetails.setClaimedAmount(2000.0);
@@ -64,7 +64,7 @@ public class ClaimDetailsServiceTest {
 		claimDetails.setApproverRemarks("aad");
 		claimDetails.setClaimAmount(3240.0);
 		claimDetails.setClaimId(1);
-		claimDetails.setClaimNo("2345");
+		claimDetails.setClaimNo(2345);
 		claimDetails.setClaimStatus("approved");
 		claimDetails.setClaimUploadFilePath("path");
 		claimDetails.setDiagnosis("typhoid");
