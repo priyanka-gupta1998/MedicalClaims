@@ -15,14 +15,15 @@ import com.hcl.medicalclaims.dto.PolicyResponseDetailsDto;
 import com.hcl.medicalclaims.entity.PolicyDetails;
 import com.hcl.medicalclaims.exception.PolicyNotExistsException;
 import com.hcl.medicalclaims.repository.PolicyRepository;
+import com.hcl.medicalclaims.util.MedicalUtils;
 
 /**
  * Test cases for policy details services
  * @author Sharath G S
  *
  */
-@RunWith(MockitoJUnitRunner.class)
-public class TestPolicyService {
+@RunWith(MockitoJUnitRunner.Silent.class)
+public class PolicyServiceTest {
 
 	
 	@Mock
@@ -32,6 +33,7 @@ public class TestPolicyService {
 	PolicyService policyService;
 	
 	PolicyDetails policyDetails = null;
+	PolicyDetails policyDetailsNull = null;
 	
 	@Before
 	public void setUp()
@@ -51,7 +53,7 @@ public class TestPolicyService {
 	 * @throws PolicyNotExistsException
 	 */
 	@Test
-	public void testPolicyDetails() throws PolicyNotExistsException
+	public void policyDetailsTest() throws PolicyNotExistsException
 	{
 		Mockito.when(policyRepository.findBypolicyNo(policyDetails.getPolicyNo())).thenReturn(Optional.of(policyDetails));
 		PolicyResponseDetailsDto policyResponse = policyService.getPolicyDetails(policyDetails.getPolicyNo());
@@ -64,9 +66,9 @@ public class TestPolicyService {
 	 * @throws PolicyNotExistsException 
 	 */
 	@Test(expected = PolicyNotExistsException.class)
-	public void testPolicyDetailsNegative() throws PolicyNotExistsException
+	public void policyDetailTest() throws PolicyNotExistsException
 	{
-		Mockito.when(policyRepository.findBypolicyNo("QWE12345")).thenReturn(Optional.of(policyDetails));
+		Mockito.when(policyRepository.findBypolicyNo("QWE12345")).thenReturn(Optional.empty());
 		PolicyResponseDetailsDto policyResponse = policyService.getPolicyDetails("QWE12345");
 		Assert.assertEquals(policyResponse.getPolicyHolderName(), policyDetails.getPolicyHolderName());
 	}

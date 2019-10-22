@@ -56,6 +56,7 @@ public class ApproverServiceImpl implements ApproverService {
 	public ApproveResponseDto claimApproved(ApproveRequestDto approveRequest) throws ApproverNotExistsException, ClaimNumberNotExistsException {
 		LOGGER.info("the events for the approve request is called");
 		
+		ApproveResponseDto approveResponse = new ApproveResponseDto();
 		ClaimDetails claim = new ClaimDetails();
 		ApproverSummary approveSummary = new ApproverSummary();
 		
@@ -84,18 +85,22 @@ public class ApproverServiceImpl implements ApproverService {
 					
 					
 					Optional<PolicyDetails> policyDeduction =	policyRepository.findById(approveRequest.getPolicyId());
-					if(policyDeduction.isPresent())
+					if(policyDeduction.isPresent() && approveRequest.getClaimStatus().equals(MedicalUtils.APPROVED))
 					{
-						PolicyDetails policyDeduct = new PolicyDetails();
-						Double amountDeduction = claimDetails.get().getClaimAmount() - policyDeduction.get().getClaimedAmount();
+						
+						Double amountDeduction = claimDetails.get().getClaimAmount() + policyDeduction.get().getClaimedAmount();
+						PolicyDetails policyDeduct = new PolicyDetails();						
 						BeanUtils.copyProperties(policyDeduction.get(), policyDeduct);
 						policyDeduct.setClaimedAmount(amountDeduction);
 						policyRepository.save(policyDeduct);
 					}
+					approveResponse.setMessage(MedicalUtils.CLAIM_APPROVED);
+					approveResponse.setPolicyNo(approveRequest.getPolicyId());
+					approveResponse.setStatusCode(MedicalUtils.POLICY_HTTP_SUCCESS);
 					
 				}else if(approverDetails.get().getApproverRole().equals(MedicalUtils.BRANCH_MANAGER))
 				{
-					LOGGER.info("inside if statement for approverDetails");
+					LOGGER.info("inside else if statement for approverDetails");
 					approveSummary.setApproverId(approverDetails.get().getApproverId());
 					approveSummary.setApproverRole(approverDetails.get().getApproverRole());
 					ApproverSummary approve = approveSummaryRepo.save(approveSummary);
@@ -109,14 +114,18 @@ public class ApproverServiceImpl implements ApproverService {
 					
 					
 					Optional<PolicyDetails> policyDeduction =	policyRepository.findById(approveRequest.getPolicyId());
-					if(policyDeduction.isPresent())
+					if(policyDeduction.isPresent() && approveRequest.getClaimStatus().equals(MedicalUtils.APPROVED))
 					{
 						PolicyDetails policyDeduct = new PolicyDetails();
-						Double amountDeduction = claimDetails.get().getClaimAmount() - policyDeduction.get().getClaimedAmount();
+						Double amountDeduction = claimDetails.get().getClaimAmount() + policyDeduction.get().getClaimedAmount();
 						BeanUtils.copyProperties(policyDeduction.get(), policyDeduct);
 						policyDeduct.setClaimedAmount(amountDeduction);
 						policyRepository.save(policyDeduct);
 					}
+					approveResponse.setMessage(MedicalUtils.CLAIM_APPROVED);
+					approveResponse.setPolicyNo(approveRequest.getPolicyId());
+					approveResponse.setStatusCode(MedicalUtils.POLICY_HTTP_SUCCESS);
+					
 					
 				}
 			}else
@@ -127,8 +136,8 @@ public class ApproverServiceImpl implements ApproverService {
 		{
 			throw new ApproverNotExistsException(MedicalUtils.APPROVER_NOT_EXISTS);
 		}
+		return approveResponse;
 		
-		return null;
 	}
 
 }

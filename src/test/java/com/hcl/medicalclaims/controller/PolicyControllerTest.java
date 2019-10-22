@@ -21,7 +21,7 @@ import com.hcl.medicalclaims.util.MedicalUtils;
  *
  */
 @RunWith(MockitoJUnitRunner.class)
-public class TestPolicyController {
+public class PolicyControllerTest {
 
 	@Mock
 	PolicyServiceImpl policyService;
@@ -51,7 +51,7 @@ public class TestPolicyController {
 	 * @throws PolicyNotExistsException
 	 */
 	@Test
-	public void testpolicyController() throws PolicyNotExistsException
+	public void policyControllerTest() throws PolicyNotExistsException
 	{
 		Mockito.when(policyService.getPolicyDetails("QWE1234")).thenReturn(policyResponse);
 		ResponseEntity<PolicyResponseDetailsDto> policyResponseDetails = policyController.getPolicyDetails("QWE1234");
