@@ -1,0 +1,84 @@
+Satheesh_Kumar@racv.com.au
+Fjftwsc4
+
+VXK09@racv.com.au
+35?vC6n4
+
+Satheesh_Kumar@racv.com.au (SXK54)
+Vasanthagopi K 
+
+Lan ID - VXK09 
+
+10.37.4.5:10039/wps/portal/omtlogin
+10.37.4.6:10050/wps/portal/omtlogin
+10.37.4.7:10050/wps/portal/omtlogin
+6120042/password3            
+
+https://mmppreprod/wps/portal/omtlogin/
+7126199/password1
+7129083/password1
+7129210/password1
+7129213/password1
+7129225
+
+http://10.37.3.96:10039/wps/portal/omtlogin
+7121118 /password1
+Sharepoint URL
+https://hclo365-my.sharepoint.com/personal/gaurav_goel_hcl_com/_layouts/15/onedrive.aspx?e=5%3Aecbc23462e9646e1b4edf8b34a2e09d0&FolderCTID=0x012000C3596CE339882044902308614228DB86&id=%2Fsites%2FRoyalAutomobileClub%2FMyMembershipOnline&listurl=https%3A%2F%2Fhclo365%2Esharepoint%2Ecom%2Fsites%2FRoyalAutomobileClub%2FMyMembershipOnline 
+
+ERA Extra Care:
+https://mmppreprod/wps/portal/ERA?productType=EC
+
+ERA Total Care:
+https://mmppreprod/wps/portal/ERA?productType=TC
+
+ERA Roadside Care:
+https://mmppreprod/wps/portal/ERA?productType=RC
+
+BAS:
+https://mmppreprod/wps/portal/mobility?productType=BAS
+
+WCSC:
+https://mmppreprod/wps/portal/mobility?productType=WCSC
+
+CV:
+https://mmppreprod/wps/portal/mobility?productType=CV2
+
+EHA:
+https://mmppreprod/wps/portal/EHA
+
+Make A Payment (Unauth Payment):
+https://mmppreprod/wps/portal/unauthpay
+
+Lodge a Claim:
+https://mmppreprod/wps/portal/unauthclaims?claimType=lodge
+
+Manage a Claim:
+https://mmppreprod/wps/portal/unauthclaims?claimType=manage
+
+Home Insurance
+http://10.37.3.96:10039/wps/portal/hqte?risk=contents
+https://mmppreprod/wps/portal/hqte?risk=building
+https://mmppreprod/wps/portal/hqte?risk=contents
+https://mmppreprod/wps/portal/hqte?risk=combined
+https://mmppreprod/wps/portal/hqte?risk=landlord
+https://mmppreprod/wps/portal/hqte?risk=landlordbuilding
+https://mmppreprod/wps/portal/hqte?risk=landlordcontents
+
+Motor Insurance
+https://mmppreprod/wps/portal/mqte?risk=car
+https://mmppreprod/wps/portal/mqte?risk=bike
+http://10.37.3.96:10039/wps/portal/mqte?risk=car
+
+Login
+https://mmppreprod/wps/portal/omtlogin 
+
+Register
+https://mmppreprod/wps/portal/register 
+
+Retrieve Quote
+https://mmppreprod/wps/portal/hqte?ref=QTEXXXXXXXX&postcode=XXXX
+replace QTEXXXXXXXX with actual quote number and  XXXX with actual postcode.
+
+
+7200148103
