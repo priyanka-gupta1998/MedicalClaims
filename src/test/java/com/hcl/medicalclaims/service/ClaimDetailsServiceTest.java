@@ -64,7 +64,7 @@ public class ClaimDetailsServiceTest {
 		claimDetails.setApproverRemarks("aad");
 		claimDetails.setClaimAmount(3240.0);
 		claimDetails.setClaimId(1);
-		claimDetails.setClaimNo("2345");
+		claimDetails.setClaimNo(2345);
 		claimDetails.setClaimStatus("approved");
 		claimDetails.setClaimUploadFilePath("path");
 		claimDetails.setDiagnosis("typhoid");

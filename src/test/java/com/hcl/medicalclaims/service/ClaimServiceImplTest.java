@@ -41,7 +41,7 @@ public class ClaimServiceImplTest {
 
 		PolicyDetails policyDetails = new PolicyDetails();
 		policyDetails.setPolicyId(1);
-		policyDetails.setPolicyNo(12345);
+		policyDetails.setPolicyNo("12345");
 		policyDetails.setPolicyType("medical");
 		policyDetails.setClaimedAmount(1500.00);
 		policyDetails.setEligibleAmount(3000.00);
@@ -84,7 +84,7 @@ public class ClaimServiceImplTest {
 
 		PolicyDetails policyDetails = new PolicyDetails();
 		policyDetails.setPolicyId(1);
-		policyDetails.setPolicyNo(12345);
+		policyDetails.setPolicyNo("12345");
 		policyDetails.setPolicyType("medical");
 		policyDetails.setClaimedAmount(1500.00);
 		policyDetails.setEligibleAmount(3000.00);
@@ -126,7 +126,7 @@ public class ClaimServiceImplTest {
 
 		PolicyDetails policyDetails = new PolicyDetails();
 		policyDetails.setPolicyId(1);
-		policyDetails.setPolicyNo(12345);
+		policyDetails.setPolicyNo("12345");
 		policyDetails.setPolicyType("medical");
 		policyDetails.setClaimedAmount(1500.00);
 		policyDetails.setEligibleAmount(3000.00);

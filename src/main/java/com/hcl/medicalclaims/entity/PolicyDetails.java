@@ -17,7 +17,7 @@ public class PolicyDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer policyId;
-	private Integer policyNo;
+	private String policyNo;
 	private String policyHolderName;
 	private String policyType;
 	private Double eligibleAmount;
@@ -56,14 +56,14 @@ public class PolicyDetails {
 	/**
 	 * @return the policyNo
 	 */
-	public Integer getPolicyNo() {
+	public String getPolicyNo() {
 		return policyNo;
 	}
 
 	/**
 	 * @param policyNo the policyNo to set
 	 */
-	public void setPolicyNo(Integer policyNo) {
+	public void setPolicyNo(String policyNo) {
 		this.policyNo = policyNo;
 	}
 

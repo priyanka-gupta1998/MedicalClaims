@@ -41,7 +41,7 @@ public class TestPolicyService {
 		policyDetails.setEligibleAmount((double) 30000);
 		policyDetails.setPolicyHolderName("Sharath");
 		policyDetails.setPolicyId(1);
-		policyDetails.setPolicyNo("QWE1234");
+		policyDetails.setPolicyNo("1234");
 		policyDetails.setPolicyType("DENTAL");
 	}
 	
