@@ -22,7 +22,7 @@ public class ClaimDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer claimId;
-	private String claimNo;
+	private Integer claimNo;
 	private Double claimAmount;
 	private LocalDate admittedDate;
 	private LocalDate dischargeDate;
@@ -33,9 +33,25 @@ public class ClaimDetails {
 	private String claimStatus;
 	private String claimUploadFilePath;;
 	private String approverRemarks;
+	private String natureOfAilment;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "policyId", referencedColumnName = "policyId")
 	private PolicyDetails policyDetails;
+	
+	
+	/**
+	 * @return the natureOfAilment
+	 */
+	public String getNatureOfAilment() {
+		return natureOfAilment;
+	}
+
+	/**
+	 * @param natureOfAilment the natureOfAilment to set
+	 */
+	public void setNatureOfAilment(String natureOfAilment) {
+		this.natureOfAilment = natureOfAilment;
+	}
 
 	/**
 	 * @return the claimId
@@ -54,14 +70,14 @@ public class ClaimDetails {
 	/**
 	 * @return the claimNo
 	 */
-	public String getClaimNo() {
+	public Integer getClaimNo() {
 		return claimNo;
 	}
 
 	/**
 	 * @param claimNo the claimNo to set
 	 */
-	public void setClaimNo(String claimNo) {
+	public void setClaimNo(Integer claimNo) {
 		this.claimNo = claimNo;
 	}
 
