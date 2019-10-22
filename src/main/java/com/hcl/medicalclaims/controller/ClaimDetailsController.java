@@ -29,7 +29,7 @@ public class ClaimDetailsController {
 	{
 		LOGGER.info("inside claim details controller");
 		ClaimDetailsResponseDto claimDetailsResponseDto=claimsDetailsService.getClaimDetails();
-		claimDetailsResponseDto.setMessage("Successfully getting claim details!!!");
+		claimDetailsResponseDto.setMessage("Claim details");
 		claimDetailsResponseDto.setStatusCode(201);
 		return claimDetailsResponseDto;
 		

@@ -39,7 +39,7 @@ public class PolicyController {
 	 * @throws PolicyNotExistsException 
 	 */
 	@GetMapping("/{policyNo}")
-	public ResponseEntity<PolicyResponseDetailsDto> getPolicyDetails(@NotNull @PathVariable(value = "policyNo", required = true) String policyNo) throws PolicyNotExistsException
+	public ResponseEntity<PolicyResponseDetailsDto> getPolicyDetails(@NotNull @PathVariable(value = "policyNo", required = true) Integer policyNo) throws PolicyNotExistsException
 	{
 		LOGGER.info("events for controller for policy details is called");
 		return new ResponseEntity<>(policyService.getPolicyDetails(policyNo),HttpStatus.OK);

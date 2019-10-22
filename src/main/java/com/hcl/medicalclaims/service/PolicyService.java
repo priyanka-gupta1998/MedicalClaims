@@ -33,7 +33,7 @@ public class PolicyService implements PolicyServiceImpl {
 	 * @throws PolicyNotExistsException 
 	 */
 	@Override
-	public PolicyResponseDetailsDto getPolicyDetails(String policyNo) throws PolicyNotExistsException {
+	public PolicyResponseDetailsDto getPolicyDetails(Integer policyNo) throws PolicyNotExistsException {
 		LOGGER.info("event for policy service is called");
 		
 		Optional<PolicyDetails> policyDetail = policyRepository.findBypolicyNo(policyNo);
@@ -45,7 +45,7 @@ public class PolicyService implements PolicyServiceImpl {
 		}
 		
 		PolicyResponseDetailsDto policyResponse = new PolicyResponseDetailsDto();
-		policyDetail.ifPresent(Policy -> {
+		policyDetail.ifPresent(policy -> {
 		
 			BeanUtils.copyProperties(policyDetail.get(), policyResponse);
 			policyResponse.setMessage(MedicalUtils.POLICY_DETAILS_EXISTS);

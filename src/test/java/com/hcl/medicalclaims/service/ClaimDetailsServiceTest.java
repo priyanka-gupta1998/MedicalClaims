@@ -48,7 +48,7 @@ public class ClaimDetailsServiceTest {
 		claimDetailss = new ArrayList<>();
 		polictDetails=new PolicyDetails();
 		polictDetails.setPolicyId(1);
-		polictDetails.setPolicyNo("1234");
+		polictDetails.setPolicyNo(1234);
 		polictDetails.setPolicyType("Dental");
 		polictDetails.setPolicyHolderName("Priyanka");
 		polictDetails.setClaimedAmount(2000.0);

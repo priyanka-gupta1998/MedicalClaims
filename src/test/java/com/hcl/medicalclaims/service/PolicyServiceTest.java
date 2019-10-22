@@ -22,7 +22,7 @@ import com.hcl.medicalclaims.repository.PolicyRepository;
  *
  */
 @RunWith(MockitoJUnitRunner.class)
-public class TestPolicyService {
+public class PolicyServiceTest {
 
 	
 	@Mock
@@ -41,7 +41,7 @@ public class TestPolicyService {
 		policyDetails.setEligibleAmount((double) 30000);
 		policyDetails.setPolicyHolderName("Sharath");
 		policyDetails.setPolicyId(1);
-		policyDetails.setPolicyNo("1234");
+		policyDetails.setPolicyNo(1234);
 		policyDetails.setPolicyType("DENTAL");
 	}
 	
@@ -53,7 +53,7 @@ public class TestPolicyService {
 	@Test
 	public void testPolicyDetails() throws PolicyNotExistsException
 	{
-		Mockito.when(policyRepository.findBypolicyNo(policyDetails.getPolicyNo())).thenReturn(Optional.of(policyDetails));
+		Mockito.when(policyRepository.findBypolicyNo(Mockito.anyInt())).thenReturn(Optional.of(policyDetails));
 		PolicyResponseDetailsDto policyResponse = policyService.getPolicyDetails(policyDetails.getPolicyNo());
 		Assert.assertEquals(policyResponse.getPolicyHolderName(), policyDetails.getPolicyHolderName());
 	}
@@ -66,8 +66,8 @@ public class TestPolicyService {
 	@Test(expected = PolicyNotExistsException.class)
 	public void testPolicyDetailsNegative() throws PolicyNotExistsException
 	{
-		Mockito.when(policyRepository.findBypolicyNo("QWE12345")).thenReturn(Optional.of(policyDetails));
-		PolicyResponseDetailsDto policyResponse = policyService.getPolicyDetails("QWE12345");
+		Mockito.when(policyRepository.findBypolicyNo(Mockito.anyInt())).thenReturn(Optional.empty());
+		PolicyResponseDetailsDto policyResponse = policyService.getPolicyDetails(Mockito.anyInt());
 		Assert.assertEquals(policyResponse.getPolicyHolderName(), policyDetails.getPolicyHolderName());
 	}
 }
