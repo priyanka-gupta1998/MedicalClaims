@@ -81,7 +81,7 @@ public class ClaimDetailsServiceTest {
 		claimDto.setApproverRemarks("sdf");
 		claimDto.setClaimAmount(2000.0);
 		claimDto.setClaimId(1);
-		claimDto.setClaimNo("1234");
+		claimDto.setClaimNo(1234);
 		claimDto.setClaimStatus("approved");
 		claimDto.setClaimUploadFilePath("path");
 		claimDto.setDiagnosis("typhoid");
