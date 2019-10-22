@@ -56,14 +56,14 @@ public class PolicyDetails {
 	/**
 	 * @return the policyNo
 	 */
-	public String getPolicyNo() {
+	public Integer getPolicyNo() {
 		return policyNo;
 	}
 
 	/**
 	 * @param policyNo the policyNo to set
 	 */
-	public void setPolicyNo(String policyNo) {
+	public void setPolicyNo(Integer policyNo) {
 		this.policyNo = policyNo;
 	}
 

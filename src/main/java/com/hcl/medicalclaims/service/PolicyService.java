@@ -33,7 +33,7 @@ public class PolicyService implements PolicyServiceImpl {
 	 * @throws PolicyNotExistsException 
 	 */
 	@Override
-	public PolicyResponseDetailsDto getPolicyDetails(String policyNo) throws PolicyNotExistsException {
+	public PolicyResponseDetailsDto getPolicyDetails(Integer policyNo) throws PolicyNotExistsException {
 		LOGGER.info("event for policy service is called");
 		
 		Optional<PolicyDetails> policyDetail = policyRepository.findBypolicyNo(policyNo);

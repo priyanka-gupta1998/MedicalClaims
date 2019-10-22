@@ -57,7 +57,7 @@ public class ApproveServiceTest {
 		policyDetails.setEligibleAmount((double) 200000);
 		policyDetails.setPolicyHolderName("Sharath");
 		policyDetails.setPolicyId(1);
-		policyDetails.setPolicyNo("QWE1234");
+		policyDetails.setPolicyNo(1234);
 		policyDetails.setPolicyType("DENTAL");
 		
 		approveRequest = new ApproveRequestDto();
@@ -78,7 +78,7 @@ public class ApproveServiceTest {
 		claimDetails.setApproverSummaryId(1);
 		claimDetails.setClaimAmount((double) 50000);
 		claimDetails.setClaimId(1);
-		claimDetails.setClaimNo("QWE1234");
+		claimDetails.setClaimNo(1234);
 		claimDetails.setClaimStatus("PENDING");
 		claimDetails.setDiagnosis("FULL BODY");
 		claimDetails.setDischargeSummary("heart operation done and need to take rest");

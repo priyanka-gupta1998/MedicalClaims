@@ -20,6 +20,7 @@ import com.hcl.medicalclaims.util.MedicalUtils;
  * @author Sharath G S
  *
  */
+
 @RunWith(MockitoJUnitRunner.class)
 public class PolicyControllerTest {
 
@@ -53,8 +54,8 @@ public class PolicyControllerTest {
 	@Test
 	public void policyControllerTest() throws PolicyNotExistsException
 	{
-		Mockito.when(policyService.getPolicyDetails("QWE1234")).thenReturn(policyResponse);
-		ResponseEntity<PolicyResponseDetailsDto> policyResponseDetails = policyController.getPolicyDetails("QWE1234");
+		Mockito.when(policyService.getPolicyDetails(Mockito.anyInt())).thenReturn(policyResponse);
+		ResponseEntity<PolicyResponseDetailsDto> policyResponseDetails = policyController.getPolicyDetails(Mockito.anyInt());
 		PolicyResponseDetailsDto policy = policyResponseDetails.getBody();
 		Assert.assertEquals(policy.getMessage(), policyResponse.getMessage());
 	}

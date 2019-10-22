@@ -10,6 +10,6 @@ import com.hcl.medicalclaims.entity.PolicyDetails;
 public interface PolicyRepository extends JpaRepository<PolicyDetails, Integer> {
 
 	
-	public Optional<PolicyDetails> findBypolicyNo(String policyNo);
+	public Optional<PolicyDetails> findBypolicyNo(Integer policyNo);
 
 }

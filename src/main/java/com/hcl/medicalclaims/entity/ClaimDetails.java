@@ -23,7 +23,7 @@ public class ClaimDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer claimId;
-	private String claimNo;
+	private Integer claimNo;
 	private Double claimAmount;
 	private LocalDate admittedDate;
 	private LocalDate dischargeDate;
@@ -42,11 +42,11 @@ public class ClaimDetails {
 
 	
 	
-	public String getClaimNo() {
+	public Integer getClaimNo() {
 		return claimNo;
 	}
 
-	public void setClaimNo(String claimNo) {
+	public void setClaimNo(Integer claimNo) {
 		this.claimNo = claimNo;
 	}
 

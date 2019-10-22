@@ -8,6 +8,6 @@ import com.hcl.medicalclaims.exception.PolicyNotExistsException;
 @Service
 public interface PolicyServiceImpl {
 
-	public PolicyResponseDetailsDto getPolicyDetails(String policyNo) throws PolicyNotExistsException;
+	public PolicyResponseDetailsDto getPolicyDetails(Integer policyNo) throws PolicyNotExistsException;
 	
 }
