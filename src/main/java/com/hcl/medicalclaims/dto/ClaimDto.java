@@ -1,7 +1,10 @@
 package com.hcl.medicalclaims.dto;
 
 import java.time.LocalDate;
-
+/**
+ * @author priyanka
+ *
+ */
 public class ClaimDto {
 
 	private Integer claimId;

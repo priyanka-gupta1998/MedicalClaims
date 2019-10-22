@@ -1,5 +1,9 @@
 package com.hcl.medicalclaims.dto;
 
+/**
+ * @author priyanka
+ *
+ */
 public class ApproverLoginResponseDto {
 
 	private Integer approvarId;

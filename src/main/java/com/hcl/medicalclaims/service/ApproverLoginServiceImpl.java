@@ -3,6 +3,8 @@ package com.hcl.medicalclaims.service;
 
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,7 @@ import com.hcl.medicalclaims.util.ExceptionConstants;
 @Service
 public class ApproverLoginServiceImpl implements ApproverLoginService {
 	
+	private static final Logger LOGGER = LoggerFactory.getLogger(ClaimDetailsServiceImpl.class);
 	/**
 	 * @apiNote emailId and password we need to pass
 	 * @return role and name of the approver
@@ -29,6 +32,7 @@ public class ApproverLoginServiceImpl implements ApproverLoginService {
 	
 	public ApproverLoginResponseDto approverLogin(ApproverLoginRequestDto approverLoginRequestDto)
 	{     
+		LOGGER.info("this service will return username with role");
 		Optional<ApproverDetails> approverDetailss=approverRepository.findByMailIdAndPassword(approverLoginRequestDto.getMailId(),
 				approverLoginRequestDto.getPassword());
 		if(approverDetailss.isPresent())

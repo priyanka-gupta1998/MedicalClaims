@@ -21,7 +21,10 @@ import com.hcl.medicalclaims.entity.ClaimDetails;
 import com.hcl.medicalclaims.entity.PolicyDetails;
 import com.hcl.medicalclaims.repository.ClaimDetailsRepository;
 import com.hcl.medicalclaims.repository.PolicyRepository;
-
+/**
+ * @author priyanka
+ *
+ */
 @RunWith(MockitoJUnitRunner.class) 
 public class ClaimDetailsServiceTest {
 

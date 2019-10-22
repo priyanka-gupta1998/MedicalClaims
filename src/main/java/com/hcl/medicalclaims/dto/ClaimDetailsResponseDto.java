@@ -4,7 +4,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.hcl.medicalclaims.entity.ClaimDetails;
-
+/**
+ * @author priyanka
+ *
+ */
 public class ClaimDetailsResponseDto {
 	
 	private Integer statusCode;

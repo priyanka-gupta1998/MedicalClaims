@@ -1,5 +1,8 @@
 package com.hcl.medicalclaims.dto;
-
+/**
+ * @author priyanka
+ *
+ */
 public class PolicyDto {
 	private Integer policyId;
 	private String policyNo;

@@ -16,7 +16,10 @@ import com.hcl.medicalclaims.dto.ApproverLoginRequestDto;
 import com.hcl.medicalclaims.dto.ApproverLoginResponseDto;
 import com.hcl.medicalclaims.entity.ApproverDetails;
 import com.hcl.medicalclaims.repository.ApproverRepository;
-
+/**
+ * @author priyanka
+ *
+ */
 @RunWith(MockitoJUnitRunner.class) 
 public class ApproverLoginServiceTest {
 
