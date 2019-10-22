@@ -10,14 +10,13 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hcl.medicalclaims.controller.ClaimDetailsController;
 import com.hcl.medicalclaims.dto.ClaimDetailsResponseDto;
 import com.hcl.medicalclaims.dto.ClaimDto;
-import com.hcl.medicalclaims.dto.PolicyDto;
 import com.hcl.medicalclaims.entity.ClaimDetails;
 import com.hcl.medicalclaims.entity.PolicyDetails;
 import com.hcl.medicalclaims.repository.ClaimDetailsRepository;
 import com.hcl.medicalclaims.repository.PolicyRepository;
+
 /* 
 *@author priyanka
 */
@@ -28,6 +27,7 @@ public class ClaimDetailsServiceImpl implements ClaimsDetailsService {
 	PolicyRepository policyRepository;
 	@Autowired
 	ClaimDetailsRepository claimDetailsRepository;
+
 	/**
 	 * @apiNote on the basis of policy_id
 	 * @return claim details
@@ -35,30 +35,26 @@ public class ClaimDetailsServiceImpl implements ClaimsDetailsService {
 	@Override
 	public ClaimDetailsResponseDto getClaimDetails() {
 		LOGGER.info("service for getting claim details");
-	 	List<ClaimDto> claimDetailss = new ArrayList<>();
-	 	ClaimDetailsResponseDto claimDetailsResponseDto = new ClaimDetailsResponseDto();
+		List<ClaimDto> claimDetailss = new ArrayList<>();
+		ClaimDetailsResponseDto claimDetailsResponseDto = new ClaimDetailsResponseDto();
 		List<PolicyDetails> polictDetails = policyRepository.findAll();
 		polictDetails.stream().forEach(policy -> {
 			Optional<List<ClaimDetails>> claimDetailsOptional = claimDetailsRepository.findByPolicyDetails(policy);
-			if(claimDetailsOptional.isPresent())
-			{
-			 List<ClaimDetails> claimDetails = claimDetailsOptional.get();
-			 claimDetails.stream().forEach(claim -> {
-				ClaimDto claimDto = new ClaimDto();
-				BeanUtils.copyProperties(claim, claimDto);
-				claimDto.setPolicyId(policy.getPolicyId());
-				claimDetailss.add(claimDto);
+			if (claimDetailsOptional.isPresent()) {
+				List<ClaimDetails> claimDetails = claimDetailsOptional.get();
+				claimDetails.stream().forEach(claim -> {
+					ClaimDto claimDto = new ClaimDto();
+					BeanUtils.copyProperties(claim, claimDto);
+					claimDto.setPolicyId(policy.getPolicyId());
+					claimDetailss.add(claimDto);
 
-			});
+				});
 			}
-			
+
 			claimDetailsResponseDto.setClaimDetails(claimDetailss);
-			
-			
+
 		});
 		return claimDetailsResponseDto;
-		
-	
 
 	}
 

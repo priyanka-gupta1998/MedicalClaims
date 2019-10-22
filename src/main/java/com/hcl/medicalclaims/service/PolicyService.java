@@ -45,7 +45,7 @@ public class PolicyService implements PolicyServiceImpl {
 		}
 		
 		PolicyResponseDetailsDto policyResponse = new PolicyResponseDetailsDto();
-		policyDetail.ifPresent(Policy -> {
+		policyDetail.ifPresent(policy -> {
 		
 			BeanUtils.copyProperties(policyDetail.get(), policyResponse);
 			policyResponse.setMessage(MedicalUtils.POLICY_DETAILS_EXISTS);

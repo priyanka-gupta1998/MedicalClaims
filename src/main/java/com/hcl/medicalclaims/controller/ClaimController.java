@@ -35,10 +35,10 @@ public class ClaimController {
 			throws PolicyNotFoundException, HospitalNotFoundException {
 		LOGGER.info("In addClaim method of ClaimController class-----");
 		ClaimDetails addClaim = claimService.addClaim(addClaimRequest);
-		AddClaimResponseDTO AddClaimResponse = new AddClaimResponseDTO();
-		AddClaimResponse.setClaimNo(addClaim.getClaimNo());
-		AddClaimResponse.setMessage(MedicalClaimsConstants.ADD_CLAIM_SUCCESS);
-		AddClaimResponse.setStatusCode(MedicalClaimsConstants.POST_STATUS_CODE);
-		return AddClaimResponse;
+		AddClaimResponseDTO addClaimResponse = new AddClaimResponseDTO();
+		addClaimResponse.setClaimNo(addClaim.getClaimNo());
+		addClaimResponse.setMessage(MedicalClaimsConstants.ADD_CLAIM_SUCCESS);
+		addClaimResponse.setStatusCode(MedicalClaimsConstants.POST_STATUS_CODE);
+		return addClaimResponse;
 	}
 }
